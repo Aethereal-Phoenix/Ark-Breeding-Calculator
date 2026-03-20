@@ -32,6 +32,12 @@ namespace Ark_Breeding_Calculator
                 .AddInteractiveServerRenderMode();
 
             app.Run();
-        }
-    }
+        }// End of Main Method
+        #region Methods
+
+        // Methods go here
+
+        #endregion
+
+    }// End of Program Class
 }

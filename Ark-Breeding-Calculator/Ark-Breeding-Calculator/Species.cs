@@ -1,6 +1,7 @@
 ﻿namespace Ark_Breeding_Calculator
 {
-    public class Species
+    public enum Species
     {
+        // Place holder
     }
 }
