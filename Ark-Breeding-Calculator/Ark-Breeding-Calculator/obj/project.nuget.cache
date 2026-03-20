@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m7amXU/UtPA=",
+  "dgSpecHash": "G+YM2A10zy0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator.csproj",
+  "projectFilePath": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alees\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.5\\microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512"
   ],

@@ -51,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator.csproj",
+      "projectUniqueName": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator.csproj",
       "projectName": "Ark-Breeding-Calculator",
-      "projectPath": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator.csproj",
+      "projectPath": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator.csproj",
       "packagesPath": "C:\\Users\\alees\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\obj\\",
+      "outputPath": "C:\\Users\\alees\\source\\repos\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\Ark-Breeding-Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
