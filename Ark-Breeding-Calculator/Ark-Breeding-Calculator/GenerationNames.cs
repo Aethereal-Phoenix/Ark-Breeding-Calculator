@@ -1,0 +1,17 @@
+﻿namespace Ark_Breeding_Calculator
+{
+    public enum GenerationNames
+    {
+        Original,
+        Original_Intermediate,
+        Base,
+        Health,
+        Stamina,
+        Oxygen,
+        Food,
+        Water,
+        Weight,
+        Melee,
+        MovementSpeed
+    }
+}
