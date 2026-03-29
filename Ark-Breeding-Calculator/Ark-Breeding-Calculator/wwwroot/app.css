@@ -8,15 +8,17 @@ html, body {
     background-color: #1e1e1e;
     color: #ffffff;
     border: 1px solid #333;
+    width: 200px;
 }
 
 .dino-male {
     border: 5px solid #3399ff;
-    background-color: #3399ff12;
+    background-color: #3399ff20;
 }
 
 .dino-female {
     border: 5px solid #ff66b2;
+    background-color: #ff66b220;
 }
 
 a, .btn-link {

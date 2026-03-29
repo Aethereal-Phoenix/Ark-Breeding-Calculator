@@ -7,10 +7,11 @@ namespace Ark_Breeding_Calculator
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+            /* DATABASE */ builder.Services.AddSingleton<DinoStateService>(); /* DATABASE */
 
             var app = builder.Build();
 
@@ -33,6 +34,7 @@ namespace Ark_Breeding_Calculator
 
             app.Run();
         }// End of Main Method
+
         #region Methods
 
         // Methods go here
