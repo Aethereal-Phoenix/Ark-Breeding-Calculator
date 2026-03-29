@@ -12,6 +12,7 @@ html, body {
 
 .dino-male {
     border: 5px solid #3399ff;
+    background-color: #3399ff12;
 }
 
 .dino-female {
