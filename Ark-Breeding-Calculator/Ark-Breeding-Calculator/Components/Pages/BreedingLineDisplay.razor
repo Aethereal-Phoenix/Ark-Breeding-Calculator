@@ -1,0 +1,72 @@
+﻿@page "/displayBreedingLine"
+@rendermode InteractiveServer
+
+<PageTitle>Breeding Line</PageTitle>
+
+<h1>Breeding Line</h1>
+
+<p>
+    <div style="display: flex; gap: 1rem;">
+        @foreach (Dinosaur dinosaur in dinoList)
+        {
+            <div class="card p-2 m-2 @(dinosaur.Gender == Gender.Male ? "dino-male" : "dino-female")">
+                <p>Species: @dinosaur.Species</p>
+                <p>Name: @dinosaur.Name</p>
+                <p>Health: @dinosaur.Health</p>
+                <p>Stamina: @dinosaur.Stamina</p>
+                <p>Oxygen: @dinosaur.Oxygen</p>
+                <p>Food: @dinosaur.Food</p>
+                <p>Water: @dinosaur.Water</p>
+                <p>Weight: @dinosaur.Weight</p>
+                <p>Melee: @dinosaur.Melee</p>
+            </div>
+        }
+    </div>
+</p>
+
+@code {
+    // Establishes basic data to work with (OG Male and OG Female)
+    List<Dinosaur> dinoList = new()
+    {
+        new Dinosaur
+        {
+            Species = Species.Rex,
+            Health = 10000,
+            Stamina = 11000,
+            Oxygen = 12000,
+            Food = 13000,
+            Water = 14000,
+            Weight = 15000,
+            Melee = 16000,
+            MovementSpeed = 17000,
+            Gender = Gender.Male
+        },
+        new Dinosaur
+        {
+            Species = Species.Rex,
+            Health = 9000,
+            Stamina = 12000,
+            Oxygen = 8000,
+            Food = 14000,
+            Water = 7000,
+            Weight = 16000,
+            Melee = 6000,
+            MovementSpeed = 17000,
+            Gender = Gender.Female
+        }
+    };
+
+
+    // Checks the user input against the species enum to see if their input is valid
+    public string CheckInput(string input)
+    {
+        foreach (Species species in Enum.GetValues(typeof(Species)))
+        {
+            if (input.ToLower() == species.ToString().ToLower())
+            {
+                return species.ToString();
+            }
+        }
+        return "Nothing Found. Please try again.";
+    }
+}
