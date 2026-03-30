@@ -1,13 +1,28 @@
-﻿@page "/modifyList"
+﻿@page "/addDino"
 @rendermode InteractiveServer
 @inject DinoStateService DinoService /* DATABASE */
 
-<h1>ModifyList</h1>
+<h1>Add Dinosaur</h1>
 
 <!--Form to make a new dinosaur to be added to the list-->
 <div class="container" style="width: 250px;  margin-left: 0 ">
    <EditForm Model="@newDino" OnSubmit="HandleSubmit">
-       
+       <label class="form-label">Species</label>
+       <InputSelect class="form-control" @bind-Value="newDino.Species">
+        @foreach (Species species in Enum.GetValues<Species>())
+        {
+            <option value="@species">@species</option>
+        }
+        </InputSelect>
+
+        <label class="form-label">Gender</label>
+        <InputSelect class="form-control" @bind-Value="newDino.Gender">
+            @foreach (Gender gender in Enum.GetValues<Gender>())
+            {
+                <option value="@gender">@gender</option>
+            }
+        </InputSelect>
+
        <label class="form-label">Health</label>
        <InputNumber class="form-control" @bind-Value="newDino.Health" />
 
@@ -29,14 +44,6 @@
         <label class="form-label">Melee</label>
         <InputNumber class="form-control" @bind-Value="newDino.Melee" />
 
-        <label class="form-label">Gender</label>
-        <InputSelect class="form-control" @bind-Value="newDino.Gender">
-        @foreach (Gender gender in Enum.GetValues<Gender>())
-        {
-            <option value="@gender">@gender</option>
-        }
-    </InputSelect>
-
        <button type="submit">Submit</button>
    </EditForm>
 </div>
@@ -44,17 +51,7 @@
 <div style="display: flex; gap: 1rem;" class="container">
     @foreach (Dinosaur dinosaur in /* DATABASE */ DinoService.Dinosaurs /* DATABASE */)
     {
-        <div class="card p-2 m-2 @(dinosaur.Gender == Gender.Male ? "dino-male" : "dino-female")">
-            <p>Species: @dinosaur.Species</p>
-            <p>Name: @dinosaur.Name</p>
-            <p>Health: @dinosaur.Health</p>
-            <p>Stamina: @dinosaur.Stamina</p>
-            <p>Oxygen: @dinosaur.Oxygen</p>
-            <p>Food: @dinosaur.Food</p>
-            <p>Water: @dinosaur.Water</p>
-            <p>Weight: @dinosaur.Weight</p>
-            <p>Melee: @dinosaur.Melee</p>
-        </div>
+        <DinosaurCard Dinosaur="dinosaur"/>
     }
 </div>
 

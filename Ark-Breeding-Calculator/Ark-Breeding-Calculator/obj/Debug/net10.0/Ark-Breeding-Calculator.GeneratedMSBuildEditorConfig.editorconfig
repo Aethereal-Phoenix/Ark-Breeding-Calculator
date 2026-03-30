@@ -26,6 +26,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/AddDino.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGREaW5vLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/BreedingLineDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCcmVlZGluZ0xpbmVEaXNwbGF5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,12 +42,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/ModifyList.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNb2RpZnlMaXN0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/RemoveDIno.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZW1vdmVESW5vLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Routes.razor]
@@ -52,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/DinosaurCard.razor]
+build_metadata.AdditionalFiles.TargetPath = RGlub3NhdXJDYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Layout/MainLayout.razor]

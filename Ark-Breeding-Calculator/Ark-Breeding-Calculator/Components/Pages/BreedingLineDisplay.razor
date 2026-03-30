@@ -10,17 +10,7 @@
 <div style="display: flex; gap: 1rem;" class="container">
     @foreach (Dinosaur dinosaur in /* DATABASE */ DinoService.Dinosaurs /* DATABASE */)
     {
-        <div class="card p-2 m-2 @(dinosaur.Gender == Gender.Male ? "dino-male" : "dino-female")">
-            <p>Species: @dinosaur.Species</p>
-            <p>Name: @dinosaur.Name</p>
-            <p>Health: @dinosaur.Health</p>
-            <p>Stamina: @dinosaur.Stamina</p>
-            <p>Oxygen: @dinosaur.Oxygen</p>
-            <p>Food: @dinosaur.Food</p>
-            <p>Water: @dinosaur.Water</p>
-            <p>Weight: @dinosaur.Weight</p>
-            <p>Melee: @dinosaur.Melee</p>
-        </div>
+        <DinosaurCard Dinosaur="dinosaur" />
     }
 </div>
 

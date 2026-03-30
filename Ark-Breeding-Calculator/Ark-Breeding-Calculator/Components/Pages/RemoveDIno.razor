@@ -1,0 +1,20 @@
+﻿@page "/removeDino"
+@rendermode InteractiveServer
+@inject DinoStateService DinoService /* DATABASE */
+
+<PageTitle>Remove Dinosaur</PageTitle>
+
+<h1>Remove Dinosur</h1>
+
+<div style="display: flex; gap: 1rem;" class="container">
+    @foreach (Dinosaur dinosaur in /* DATABASE */ DinoService.Dinosaurs /* DATABASE */)
+    {
+        <button class="dino-btn">
+            <DinosaurCard Dinosaur="dinosaur"/>
+        </button>
+    }
+</div>
+
+@code {
+
+}

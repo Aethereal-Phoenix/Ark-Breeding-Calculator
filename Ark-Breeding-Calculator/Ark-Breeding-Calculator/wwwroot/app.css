@@ -21,6 +21,11 @@ html, body {
     background-color: #ff66b220;
 }
 
+.dino-unknown {
+    border: 5px solid #66ff66;
+    background-color: #66ff6620;
+}
+
 a, .btn-link {
     color: #006bb7;
 }
@@ -76,4 +81,11 @@ h1:focus {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
+}
+
+.dino-btn {
+    all: unset; /* nukes ALL default button styles */
+    display: block; /* so it behaves like a div */
+    width: 100%;
+    cursor: pointer;
 }

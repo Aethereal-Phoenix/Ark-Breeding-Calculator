@@ -1,0 +1,16 @@
+﻿<div class="card p-2 m-2 @(Dinosaur.Gender == Gender.Male ? "dino-male" : (Dinosaur.Gender == Gender.Female ? "dino-female" : "dino-unknown"))">
+    <p>Species: @Dinosaur.Species</p>
+    <p>Name: @Dinosaur.Name</p>
+    <p>Health: @Dinosaur.Health</p>
+    <p>Stamina: @Dinosaur.Stamina</p>
+    <p>Oxygen: @Dinosaur.Oxygen</p>
+    <p>Food: @Dinosaur.Food</p>
+    <p>Water: @Dinosaur.Water</p>
+    <p>Weight: @Dinosaur.Weight</p>
+    <p>Melee: @Dinosaur.Melee</p>
+</div>
+
+@code {
+    [Parameter]
+    public Dinosaur Dinosaur { get; set; } = default!;
+}
