@@ -1,4 +1,6 @@
-﻿namespace Ark_Breeding_Calculator
+﻿using Ark_Breeding_Calculator.Models;
+
+namespace Ark_Breeding_Calculator.Services
 {
     public class DinoStateService
     {

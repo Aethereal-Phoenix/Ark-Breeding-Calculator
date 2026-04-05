@@ -1,4 +1,4 @@
-﻿namespace Ark_Breeding_Calculator
+﻿namespace Ark_Breeding_Calculator.Models
 {
     public enum Gender
     {
