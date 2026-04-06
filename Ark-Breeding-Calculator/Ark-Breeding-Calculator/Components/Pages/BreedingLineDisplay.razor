@@ -9,7 +9,7 @@
 
 <select @bind="selectedValue">
     <option value="default">--Select--</option>
-    @foreach (Species species in DinoService.Dinosaurs.Select(d => d.Species).Distinct())
+    @foreach (Species species in DinoService.Dinosaurs.Select(d => d.Species).Distinct().OrderBy(s => s))
     {
         <option value="@species">@species</option>
     }
