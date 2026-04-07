@@ -1,6 +1,6 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public class Dinosaur
+    public class DinosaurModel
     {
         #region Private Properties
         private Species _species;
@@ -14,7 +14,7 @@
         private double _weight;
         private double _melee;
         private double _movementSpeed;
-        private GenerationNames _generation;
+        private GenerationsEnumModel _generation;
         #endregion
 
         #region Public Properties
@@ -29,11 +29,11 @@
         public double Weight { get { return _weight; } set { _weight = value; } }
         public double Melee { get { return _melee; } set { _melee = value; } }
         public double MovementSpeed { get { return _movementSpeed; } set { _movementSpeed = value; } }
-        public GenerationNames Generation { get { return _generation; } set { _generation = value; } }
+        public GenerationsEnumModel Generation { get { return _generation; } set { _generation = value; } }
         #endregion
 
         #region Constructors
-        public Dinosaur()
+        public DinosaurModel()
         {
             // Default Constructor
         }
