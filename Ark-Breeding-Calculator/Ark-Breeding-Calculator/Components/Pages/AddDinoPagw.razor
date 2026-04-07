@@ -50,20 +50,20 @@
 </div>
 
 <div style="display: flex; gap: 1rem;" class="container">
-    @foreach (Dinosaur dinosaur in /* DATABASE */ DinoService.Dinosaurs /* DATABASE */)
+    @foreach (DinosaurModel dinosaur in /* DATABASE */ DinoService.Dinosaurs /* DATABASE */)
     {
-        <DinosaurCard Dinosaur="dinosaur"/>
+        <DinosaurCardPartialView Dinosaur="dinosaur"/>
     }
 </div>
 
 
 @code {
-    private Dinosaur newDino = new();
+    private DinosaurModel newDino = new();
 
     private void HandleSubmit()
     {
         DinoService.Add(newDino);
 
-        newDino = new Dinosaur(); // reset form
+        newDino = new DinosaurModel(); // reset form
     }
 }

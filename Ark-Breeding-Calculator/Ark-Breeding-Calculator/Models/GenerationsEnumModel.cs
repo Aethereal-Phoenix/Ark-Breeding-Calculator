@@ -1,6 +1,6 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public enum GenerationNames
+    public enum GenerationsModel
     {
         Original,
         Original_Intermediate,

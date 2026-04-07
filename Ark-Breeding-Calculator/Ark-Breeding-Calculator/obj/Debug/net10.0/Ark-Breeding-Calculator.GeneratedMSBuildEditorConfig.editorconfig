@@ -26,32 +26,32 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/DinosaurCard.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEaW5vc2F1ckNhcmQucmF6b3I=
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/DinosaurCardPartialView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEaW5vc2F1ckNhcmRQYXJ0aWFsVmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/AddDino.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGREaW5vLnJhem9y
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/AddDinoPagw.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGREaW5vUGFndy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/BreedingLineDisplay.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCcmVlZGluZ0xpbmVEaXNwbGF5LnJhem9y
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/BreedingLinePage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCcmVlZGluZ0xpbmVQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/ErrorPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvclBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/HomePage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/NotFound.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/NotFoundPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZFBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/RemoveDIno.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZW1vdmVESW5vLnJhem9y
+[C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Pages/RemoveDInoPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZW1vdmVESW5vUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alees/source/repos/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Ark-Breeding-Calculator/Components/Routes.razor]

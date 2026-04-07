@@ -5,10 +5,10 @@ namespace Ark_Breeding_Calculator.Services
     public class DinoStateService
     {
         // Internal list (the actual storage)
-        private readonly List<Dinosaur> _dinosaurs = new();
+        private readonly List<DinosaurModel> _dinosaurs = new();
 
         // Public read-only access
-        public IReadOnlyList<Dinosaur> Dinosaurs => _dinosaurs;
+        public IReadOnlyList<DinosaurModel> Dinosaurs => _dinosaurs;
 
         // Event for UI updates
         public event Action? OnChange;
@@ -22,7 +22,7 @@ namespace Ark_Breeding_Calculator.Services
         }
 
         // Add a dinosaur
-        public void Add(Dinosaur dino)
+        public void Add(DinosaurModel dino)
         {
             if (dino == null) return;
 
@@ -31,7 +31,7 @@ namespace Ark_Breeding_Calculator.Services
         }
 
         // Remove a dinosaur
-        public void Remove(Dinosaur dino)
+        public void Remove(DinosaurModel dino)
         {
             if (dino == null) return;
 
@@ -56,13 +56,13 @@ namespace Ark_Breeding_Calculator.Services
         }
 
         // Optional helper: find by name
-        public Dinosaur? GetByName(string name)
+        public DinosaurModel? GetByName(string name)
         {
             return _dinosaurs.FirstOrDefault(d => d.Name == name);
         }
 
         // Optional: replace entire list (useful later for loading data)
-        public void SetAll(IEnumerable<Dinosaur> dinos)
+        public void SetAll(IEnumerable<DinosaurModel> dinos)
         {
             _dinosaurs.Clear();
             _dinosaurs.AddRange(dinos);
@@ -72,9 +72,9 @@ namespace Ark_Breeding_Calculator.Services
         // Seed data for testing
         private void SeedTestData()
         {
-            _dinosaurs.AddRange(new List<Dinosaur>
+            _dinosaurs.AddRange(new List<DinosaurModel>
             {
-                new Dinosaur
+                new DinosaurModel
                 {
                     Species = Species.Rex,
                     Health = 10000,
@@ -87,7 +87,7 @@ namespace Ark_Breeding_Calculator.Services
                     MovementSpeed = 17000,
                     Gender = Gender.Male
                 },
-                new Dinosaur
+                new DinosaurModel
                 {
                     Species = Species.Rex,
                     Health = 9000,
@@ -100,7 +100,7 @@ namespace Ark_Breeding_Calculator.Services
                     MovementSpeed = 17000,
                     Gender = Gender.Female
                 },
-                new Dinosaur
+                new DinosaurModel
                 {
                     Species = Species.Shadowmane,
                     Health = 10000,
@@ -113,7 +113,7 @@ namespace Ark_Breeding_Calculator.Services
                     MovementSpeed = 17000,
                     Gender = Gender.Male
                 },
-                new Dinosaur
+                new DinosaurModel
                 {
                     Species = Species.Shadowmane,
                     Health = 9000,

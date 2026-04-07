@@ -16,10 +16,10 @@
 </select>
 
 <div style="display: flex; gap: 1rem;" class="container">
-    @foreach (Dinosaur dinosaur in DinoService.Dinosaurs
+    @foreach (DinosaurModel dinosaur in DinoService.Dinosaurs
             .Where(d => d.Species.ToString() == selectedValue))
     {
-        <DinosaurCard Dinosaur="dinosaur" />
+        <DinosaurCardPartialView Dinosaur="dinosaur" />
     }
 </div>
 
