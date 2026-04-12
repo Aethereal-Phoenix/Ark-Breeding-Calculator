@@ -4,11 +4,11 @@ namespace Ark_Breeding_Calculator.Services
 {
     public class DinoStateService
     {
-        // Internal list (the actual storage)
-        private readonly List<DinosaurModel> _dinosaurs = new();
+        // Internal readonly list of all breeding lines
+        private readonly List<BreedingLineModel> _breedingLines = new();
 
-        // Public read-only access
-        public IReadOnlyList<DinosaurModel> Dinosaurs => _dinosaurs;
+        // Public readonly list of all breeding lines
+        public IReadOnlyList<BreedingLineModel> BreedingLines => _breedingLines;
 
         // Event for UI updates
         public event Action? OnChange;
@@ -22,111 +22,116 @@ namespace Ark_Breeding_Calculator.Services
         }
 
         // Add a dinosaur
-        public void Add(DinosaurModel dino)
+        public void AddBreedingLine(BreedingLineModel line)
         {
-            if (dino == null) return;
+            if (line == null) return;
 
-            _dinosaurs.Add(dino);
+            _breedingLines.Add(line);
             NotifyStateChanged();
         }
 
         // Remove a dinosaur
-        public void Remove(DinosaurModel dino)
+        public void RemoveBreedingLine(Guid lineId)
         {
-            if (dino == null) return;
+            var line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
+            if (line == null) return;
 
-            _dinosaurs.Remove(dino);
+            _breedingLines.Remove(line);
             NotifyStateChanged();
         }
 
-        // Remove by index (useful sometimes)
-        public void RemoveAt(int index)
+        public void AddDinoToLine(Guid lineId, DinosaurModel dino)
         {
-            if (index < 0 || index >= _dinosaurs.Count) return;
+            var line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
+            if (line == null || dino == null) return;
 
-            _dinosaurs.RemoveAt(index);
+            line.Dinosaurs.Add(dino);
             NotifyStateChanged();
         }
 
-        // Clear all dinosaurs
-        public void Clear()
+        public void RemoveDinoFromLine(Guid lineId, DinosaurModel dino)
         {
-            _dinosaurs.Clear();
+            var line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
+            if (line == null || dino == null) return;
+
+            line.Dinosaurs.Remove(dino);
             NotifyStateChanged();
         }
 
-        // Optional helper: find by name
-        public DinosaurModel? GetByName(string name)
+        public IEnumerable<DinosaurModel> GetBySpecies(Species species)
         {
-            return _dinosaurs.FirstOrDefault(d => d.Name == name);
-        }
-
-        // Optional: replace entire list (useful later for loading data)
-        public void SetAll(IEnumerable<DinosaurModel> dinos)
-        {
-            _dinosaurs.Clear();
-            _dinosaurs.AddRange(dinos);
-            NotifyStateChanged();
+            return _breedingLines
+                .Where(l => l.Species == species)
+                .SelectMany(l => l.Dinosaurs);
         }
 
         // Seed data for testing
         private void SeedTestData()
         {
-            _dinosaurs.AddRange(new List<DinosaurModel>
+            BreedingLineModel rexLine = new BreedingLineModel
             {
-                new DinosaurModel
+                Name = "Rex Line",
+                Species = Species.Rex,
+                Dinosaurs = new List<DinosaurModel>
                 {
-                    Species = Species.Rex,
-                    Health = 10000,
-                    Stamina = 11000,
-                    Oxygen = 12000,
-                    Food = 13000,
-                    Water = 14000,
-                    Weight = 15000,
-                    Melee = 16000,
-                    MovementSpeed = 17000,
-                    Gender = Gender.Male
-                },
-                new DinosaurModel
-                {
-                    Species = Species.Rex,
-                    Health = 9000,
-                    Stamina = 12000,
-                    Oxygen = 8000,
-                    Food = 14000,
-                    Water = 7000,
-                    Weight = 16000,
-                    Melee = 6000,
-                    MovementSpeed = 17000,
-                    Gender = Gender.Female
-                },
-                new DinosaurModel
-                {
-                    Species = Species.Shadowmane,
-                    Health = 10000,
-                    Stamina = 11000,
-                    Oxygen = 12000,
-                    Food = 13000,
-                    Water = 14000,
-                    Weight = 15000,
-                    Melee = 16000,
-                    MovementSpeed = 17000,
-                    Gender = Gender.Male
-                },
-                new DinosaurModel
-                {
-                    Species = Species.Shadowmane,
-                    Health = 9000,
-                    Stamina = 12000,
-                    Oxygen = 8000,
-                    Food = 14000,
-                    Water = 7000,
-                    Weight = 16000,
-                    Melee = 6000,
-                    MovementSpeed = 17000,
-                    Gender = Gender.Female
+                    new DinosaurModel { 
+                        Species = Species.Rex,
+                        Health = 10000,
+                        Stamina = 11000,
+                        Oxygen = 12000,
+                        Food = 13000,
+                        Water = 14000,
+                        Weight = 15000,
+                        Melee = 16000,
+                        MovementSpeed = 17000,
+                        Gender = Gender.Male },
+                    new DinosaurModel { 
+                        Species = Species.Rex, 
+                        Health = 10000,
+                        Stamina = 11000,
+                        Oxygen = 12000,
+                        Food = 13000,
+                        Water = 14000,
+                        Weight = 15000,
+                        Melee = 16000,
+                        MovementSpeed = 17000, 
+                        Gender = Gender.Female }
                 }
-            });
+            };
+
+            BreedingLineModel shadowmaneLine = new BreedingLineModel
+            {
+                Name = "Shadowmane Line",
+                Species = Species.Shadowmane,
+                Dinosaurs = new List<DinosaurModel>
+                {
+                    new DinosaurModel { 
+                        Species = Species.Shadowmane,
+                        Health = 10000, 
+                        Stamina = 11000, 
+                        Oxygen = 12000, 
+                        Food = 13000, 
+                        Water = 14000, 
+                        Weight = 15000, 
+                        Melee = 16000, 
+                        MovementSpeed = 17000,
+                        Gender = Gender.Male },
+                    new DinosaurModel { 
+                        Species = Species.Shadowmane,
+                        Health = 10000,
+                        Stamina = 11000,
+                        Oxygen = 12000,
+                        Food = 13000,
+                        Water = 14000,
+                        Weight = 15000,
+                        Melee = 16000,
+                        MovementSpeed = 17000,
+                        Gender = Gender.Female }
+                }
+            };
+
+            _breedingLines.Add(rexLine);
+            _breedingLines.Add(shadowmaneLine);
         }
     }// End of DinoStateService class
 }
