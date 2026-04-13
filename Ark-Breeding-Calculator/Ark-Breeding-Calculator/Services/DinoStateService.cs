@@ -14,7 +14,7 @@ namespace Ark_Breeding_Calculator.Services
         public event Action? OnChange;
 
         private void NotifyStateChanged() => OnChange?.Invoke();
-
+        
         // Constructor (optional seed data for testing)
         public DinoStateService()
         {
@@ -133,5 +133,7 @@ namespace Ark_Breeding_Calculator.Services
             _breedingLines.Add(rexLine);
             _breedingLines.Add(shadowmaneLine);
         }
+
+
     }// End of DinoStateService class
 }

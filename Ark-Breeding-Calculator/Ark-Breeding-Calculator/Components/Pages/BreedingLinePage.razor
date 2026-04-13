@@ -7,23 +7,41 @@
 
 <h1>Breeding Line</h1>
 
-<select @bind="selectedValue">
-    <option value="default">--Select--</option>
-    @foreach (Species species in DinoService.Dinosaurs.Select(d => d.Species).Distinct().OrderBy(s => s))
+<select class="form-select" @bind="selectedLineId">
+    <option value="">-- Select Breeding Line --</option>
+
+    @foreach (IGrouping<Species, BreedingLineModel> group in DinoService.BreedingLines
+            .GroupBy(l => l.Species)
+            .OrderBy(g => g.Key))
     {
-        <option value="@species">@species</option>
+        <optgroup label="@group.Key">
+            @foreach (BreedingLineModel breedingLine in group.OrderBy(l => l.Name))
+            {
+                <option value="@breedingLine.Id">@breedingLine.Name</option>
+            }
+        </optgroup>
     }
 </select>
 
-<div style="display: flex; gap: 1rem;" class="container">
-    @foreach (DinosaurModel dinosaur in DinoService.Dinosaurs
-            .Where(d => d.Species.ToString() == selectedValue))
-    {
-        <DinosaurCardPartialView Dinosaur="dinosaur" />
-    }
-</div>
+@if (selectedLine is not null)
+{
+    <h4 class="mt-3">Selected Line: @selectedLine.Name</h4>
+
+    <div class="d-flex flex-wrap gap-3 mt-3">
+        @foreach (DinosaurModel dinosaur in selectedLine.Dinosaurs)
+        {
+            <button class="btn-primary">
+                <DinosaurCardPartialView Dinosaur="dinosaur" />
+            </button>
+        }
+    </div>
+}
 
 
 @code {
-    public string selectedValue;
+    public string? selectedValue;
+    private Guid? selectedLineId;
+
+    private BreedingLineModel? selectedLine =>
+        DinoService.BreedingLines.FirstOrDefault(l => l.Id == selectedLineId);
 }
