@@ -7,15 +7,18 @@
 
 <h1>Breeding Line</h1>
 
+<!--Drop down selection to view breeding lines-->
 <select class="form-select" @bind="selectedLineId">
     <option value="">-- Select Breeding Line --</option>
 
+    <!--Group all breeding lines by Species, then sort those species groups alphabetically.-->
+    <!--Each 'group' represents one Species (group.Key) and contains all BreedingLineModels for that species.-->
     @foreach (IGrouping<Species, BreedingLineModel> group in DinoService.BreedingLines
-            .GroupBy(l => l.Species)
-            .OrderBy(g => g.Key))
+            .GroupBy(species => species.Species)
+            .OrderBy(group => group.Key))
     {
         <optgroup label="@group.Key">
-            @foreach (BreedingLineModel breedingLine in group.OrderBy(l => l.Name))
+            @foreach (BreedingLineModel breedingLine in group.OrderBy(species => species.Name))
             {
                 <option value="@breedingLine.Id">@breedingLine.Name</option>
             }
@@ -23,10 +26,10 @@
     }
 </select>
 
+<!--Displays the breeding line to the user-->
 @if (selectedLine is not null)
 {
     <h4 class="mt-3">Selected Line: @selectedLine.Name</h4>
-
     <div class="d-flex flex-wrap gap-3 mt-3">
         @foreach (DinosaurModel dinosaur in selectedLine.Dinosaurs)
         {
@@ -37,11 +40,22 @@
     </div>
 }
 
+<!--Modal when the button on a dinosaur is clicked-->
+<dialog id="dinosaurModal">
+
+</dialog>
+
 
 @code {
+    // Holds the raw selected value from the UI <select> (string because HTML values are strings)
     public string? selectedValue;
+
+    // Strongly-typed ID of the selected breeding line (used for lookups)
     private Guid? selectedLineId;
 
+    // Computed property: finds the currently selected BreedingLineModel
+    // by matching selectedLineId against the list in DinoService.
+    // Returns null if nothing is selected or no match is found.
     private BreedingLineModel? selectedLine =>
         DinoService.BreedingLines.FirstOrDefault(l => l.Id == selectedLineId);
 }

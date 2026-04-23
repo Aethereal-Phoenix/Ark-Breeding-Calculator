@@ -1,6 +1,16 @@
-﻿<div class="card p-2 m-2 @(Dinosaur.Gender == Gender.Male ? "dino-male" : (Dinosaur.Gender == Gender.Female ? "dino-female" : "dino-unknown"))">
+﻿<!-- Displays a single Dinosaur's stats in a styled card -->
+<!--The color will change based on gender-->
+<div class="card p-2 m-2 @(Dinosaur.Gender == Gender.Male
+             ? "dino-male"
+             : (Dinosaur.Gender == Gender.Female
+                 ? "dino-female"
+                 : "dino-unknown"))">
+
+    <!-- Basic identity -->
     <p>Species: @Dinosaur.Species</p>
     <p>Name: @Dinosaur.Name</p>
+
+    <!-- Core stats -->
     <p>Health: @Dinosaur.Health</p>
     <p>Stamina: @Dinosaur.Stamina</p>
     <p>Oxygen: @Dinosaur.Oxygen</p>
@@ -11,6 +21,8 @@
 </div>
 
 @code {
+    // Input parameter: the Dinosaur to display
+    // This is passed in from the Page that calls this PartialView
     [Parameter]
     public DinosaurModel Dinosaur { get; set; } = default!;
 }

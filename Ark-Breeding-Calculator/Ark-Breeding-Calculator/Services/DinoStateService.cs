@@ -2,26 +2,28 @@
 
 namespace Ark_Breeding_Calculator.Services
 {
+    // Service that manages all breeding line state in-memory.
+    // Acts as a central store for adding/removing lines and dinosaurs,
+    // and notifies the UI when data changes.
     public class DinoStateService
     {
-        // Internal readonly list of all breeding lines
+        // Internal mutable list of breeding lines
         private readonly List<BreedingLineModel> _breedingLines = new();
 
-        // Public readonly list of all breeding lines
+        // Public read-only view of breeding lines
         public IReadOnlyList<BreedingLineModel> BreedingLines => _breedingLines;
 
-        // Event for UI updates
+        // Event triggered whenever state changes (used to refresh UI)
         public event Action? OnChange;
-
         private void NotifyStateChanged() => OnChange?.Invoke();
-        
-        // Constructor (optional seed data for testing)
+
+        // Initialize with test data
         public DinoStateService()
         {
             SeedTestData();
         }
 
-        // Add a dinosaur
+        // Adds a new breeding line
         public void AddBreedingLine(BreedingLineModel line)
         {
             if (line == null) return;
@@ -30,7 +32,7 @@ namespace Ark_Breeding_Calculator.Services
             NotifyStateChanged();
         }
 
-        // Remove a dinosaur
+        // Removes a breeding line by ID
         public void RemoveBreedingLine(Guid lineId)
         {
             var line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
@@ -40,6 +42,7 @@ namespace Ark_Breeding_Calculator.Services
             NotifyStateChanged();
         }
 
+        // Adds a dinosaur to a specific breeding line
         public void AddDinoToLine(Guid lineId, DinosaurModel dino)
         {
             var line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
@@ -49,6 +52,7 @@ namespace Ark_Breeding_Calculator.Services
             NotifyStateChanged();
         }
 
+        // Removes a dinosaur from a specific breeding line
         public void RemoveDinoFromLine(Guid lineId, DinosaurModel dino)
         {
             var line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
@@ -58,6 +62,7 @@ namespace Ark_Breeding_Calculator.Services
             NotifyStateChanged();
         }
 
+        // Returns all dinosaurs across all lines of a given species
         public IEnumerable<DinosaurModel> GetBySpecies(Species species)
         {
             return _breedingLines
@@ -65,7 +70,7 @@ namespace Ark_Breeding_Calculator.Services
                 .SelectMany(l => l.Dinosaurs);
         }
 
-        // Seed data for testing
+        #region Seed data for testing
         private void SeedTestData()
         {
             BreedingLineModel rexLine = new BreedingLineModel
@@ -133,7 +138,6 @@ namespace Ark_Breeding_Calculator.Services
             _breedingLines.Add(rexLine);
             _breedingLines.Add(shadowmaneLine);
         }
-
-
+        #endregion
     }// End of DinoStateService class
 }
