@@ -2,6 +2,7 @@
 @rendermode InteractiveServer
 @using Ark_Breeding_Calculator.Services
 @inject DinoStateService DinoService /* DATABASE */
+@using Ark_Breeding_Calculator.Components
 
 <PageTitle>Breeding Line</PageTitle>
 
@@ -39,11 +40,6 @@
         }
     </div>
 }
-
-<!--Modal when the button on a dinosaur is clicked-->
-<dialog id="dinosaurModal">
-
-</dialog>
 
 
 @code {

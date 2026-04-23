@@ -1,0 +1,77 @@
+﻿@page "/addDino"
+@rendermode InteractiveServer
+@using Ark_Breeding_Calculator.Services
+@inject DinoStateService DinoService /* DATABASE */
+
+<h3>Add New Dinosaur</h3>
+
+<p>Breeding Line</p>
+<select @bind="selectedLineId">
+    @foreach (IGrouping<Species, BreedingLineModel> group in DinoService.BreedingLines
+            .GroupBy(species => species.Species)
+            .OrderBy(group => group.Key))
+    {
+        <optgroup label="@group.Key">
+            @foreach (BreedingLineModel breedingLine in group.OrderBy(species => species.Name))
+            {
+                <option value="@breedingLine.Id">@breedingLine.Name</option>
+            }
+        </optgroup>
+    }
+    <option value="">New</option>
+</select>
+
+<p>Species</p>
+<select @bind="dinosaur.Species">
+    @foreach (var species in Enum.GetValues<Species>())
+    {
+        <option value="@species">@species</option>
+    }
+</select>
+
+<p>Gender</p>
+<select @bind="dinosaur.Gender">
+    @foreach (var gender in Enum.GetValues<Gender>())
+    {
+        <option value ="@gender">@gender</option>
+    }
+</select>
+
+<p>Health</p>
+<input type="number" @bind="dinosaur.Health"/>
+
+<p>Stamina</p>
+<input type="number" @bind="dinosaur.Stamina"/>
+
+<p>Oxygen</p>
+<input type="number" @bind="dinosaur.Oxygen"/>
+
+<p>Food</p>
+<input type="number" @bind="dinosaur.Food"/>
+
+<p>Water</p>
+<input type="number" @bind="dinosaur.Water"/>
+
+<p>Carry Weight</p>
+<input type="number" @bind="dinosaur.Weight"/>
+
+<p>Melee</p>
+<input type="number" @bind="dinosaur.Melee"/>
+
+<button @onclick="AddNewDino">Add</button>
+
+@code {
+    DinosaurModel dinosaur = new DinosaurModel();
+    private Guid? selectedLineId;
+
+    private void AddNewDino()
+    {
+        if (selectedLineId == null)
+        {
+            selectedLineId = Guid.NewGuid();
+        }
+
+        DinoService.AddDinoToLine(selectedLineId.Value, dinosaur);
+        dinosaur = new DinosaurModel(); // reset form
+    }
+}
