@@ -6,6 +6,8 @@
 <h3>Add New Dinosaur</h3>
 
 <p>Breeding Line</p>
+<!--Iterates through the Database and displays each available breeding line-->
+<!--The final option is new, which will return a null value for the Guid object-->
 <select @bind="selectedLineId">
     @foreach (IGrouping<Species, BreedingLineModel> group in DinoService.BreedingLines
             .GroupBy(species => species.Species)
@@ -21,6 +23,7 @@
     <option value="">New</option>
 </select>
 
+<!--User gets a drop down of all available speices-->
 <p>Species</p>
 <select @bind="dinosaur.Species">
     @foreach (var species in Enum.GetValues<Species>())
@@ -29,6 +32,7 @@
     }
 </select>
 
+<!--Dropdown to select gender-->
 <p>Gender</p>
 <select @bind="dinosaur.Gender">
     @foreach (var gender in Enum.GetValues<Gender>())
@@ -37,6 +41,7 @@
     }
 </select>
 
+<!--Number inpputs for all stats-->
 <p>Health</p>
 <input type="number" @bind="dinosaur.Health"/>
 
@@ -61,13 +66,17 @@
 <button @onclick="AddNewDino">Add</button>
 
 @code {
+    // Initial data to work with
     DinosaurModel dinosaur = new DinosaurModel();
     private Guid? selectedLineId;
 
+    // Method to add the new dino to the Database
     private void AddNewDino()
     {
+        // First checks to see if the Guid is null to make a brand new dinosaur
         if (selectedLineId == null)
         {
+            // Initialize the new BreedingLineModel using the user input information
             BreedingLineModel breedingLine = new BreedingLineModel()
             {
                 Id = new Guid(),
@@ -75,13 +84,19 @@
                 Species = dinosaur.Species,
                 Dinosaurs = new List<DinosaurModel>()
             };
+
+            // Add the new BreedingLineModel to the Database
             DinoService.AddBreedingLine(breedingLine);
+            // Add the new dinosaur to the breedingLine
             DinoService.AddDinoToLine(breedingLine.Id, dinosaur);
         }
         else
         {
+            // Add the new dinosaur to the correct breedingLine
             DinoService.AddDinoToLine(selectedLineId.Value, dinosaur);
         }
-        dinosaur = new DinosaurModel(); // reset form
+
+        // Reset the form
+        dinosaur = new DinosaurModel();
     }
 }
