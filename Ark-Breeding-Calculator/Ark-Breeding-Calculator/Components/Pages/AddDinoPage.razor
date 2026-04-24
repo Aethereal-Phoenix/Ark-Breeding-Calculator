@@ -68,10 +68,20 @@
     {
         if (selectedLineId == null)
         {
-            selectedLineId = Guid.NewGuid();
+            BreedingLineModel breedingLine = new BreedingLineModel()
+            {
+                Id = new Guid(),
+                Name = dinosaur.Species.ToString(),
+                Species = dinosaur.Species,
+                Dinosaurs = new List<DinosaurModel>()
+            };
+            DinoService.AddBreedingLine(breedingLine);
+            DinoService.AddDinoToLine(breedingLine.Id, dinosaur);
         }
-
-        DinoService.AddDinoToLine(selectedLineId.Value, dinosaur);
+        else
+        {
+            DinoService.AddDinoToLine(selectedLineId.Value, dinosaur);
+        }
         dinosaur = new DinosaurModel(); // reset form
     }
 }
