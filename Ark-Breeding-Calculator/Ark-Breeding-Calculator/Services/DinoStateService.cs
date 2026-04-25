@@ -57,7 +57,7 @@ namespace Ark_Breeding_Calculator.Services
             }
             else
             {
-                BreedingLineModel line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
+                BreedingLineModel line = _breedingLines.FirstOrDefault(lines => lines.Id == lineId);
                 if (line == null) return;
 
                 line.Dinosaurs.Add(dino);
