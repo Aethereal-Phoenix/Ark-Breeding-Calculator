@@ -39,13 +39,30 @@ namespace Ark_Breeding_Calculator.Services
             _breedingLines.Remove(line);
             NotifyStateChanged();
         }
-
-        public void AddDinoToLine(Guid lineId, DinosaurModel dino)
+        // Method to add a dino to a breeding line or create one if needed
+        public void AddDinoToLine(Guid? lineId, DinosaurModel dino)
         {
-            var line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
-            if (line == null || dino == null) return;
+            if (dino == null) return;
 
-            line.Dinosaurs.Add(dino);
+            if (lineId == null)
+            {
+                BreedingLineModel newLine = new BreedingLineModel
+                {
+                    Name = dino.Species.ToString(),
+                    Species = dino.Species
+                };
+
+                _breedingLines.Add(newLine);
+                newLine.Dinosaurs.Add(dino);
+            }
+            else
+            {
+                BreedingLineModel line = _breedingLines.FirstOrDefault(l => l.Id == lineId);
+                if (line == null) return;
+
+                line.Dinosaurs.Add(dino);
+            }
+
             NotifyStateChanged();
         }
 
