@@ -26,6 +26,27 @@ html, body {
     background-color: #66ff6620;
 }
 
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+    gap: 40px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+    .column input,
+    .column select {
+        width: 100%;
+    }
+
+    .column p {
+        margin-bottom: 4px;
+        margin-top: 12px;
+    }
+
 a, .btn-link {
     color: #006bb7;
 }
