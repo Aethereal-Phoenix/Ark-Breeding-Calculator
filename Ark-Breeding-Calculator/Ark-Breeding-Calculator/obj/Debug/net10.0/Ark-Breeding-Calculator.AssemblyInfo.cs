@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ark-Breeding-Calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce35c97dfdf93561eff2a7ee9abc30171d80b43f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9e414b5b5df83e019ddd9418454ffbdd17bcb3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ark-Breeding-Calculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ark-Breeding-Calculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
