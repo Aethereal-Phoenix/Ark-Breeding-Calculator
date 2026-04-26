@@ -19,7 +19,7 @@
         private double _movementSpeed;
 
         // The generation of the Dinosaur
-        private GenerationsEnumModel _generation;
+        private PrimaryGenerationsEnumModel _generation;
         #endregion
 
         #region Public Properties
@@ -39,7 +39,7 @@
         public double MovementSpeed { get { return _movementSpeed; } set { _movementSpeed = value; } }
 
         // Generation of the Dinosaur
-        public GenerationsEnumModel Generation { get { return _generation; } set { _generation = value; } }
+        public PrimaryGenerationsEnumModel Generation { get { return _generation; } set { _generation = value; } }
         #endregion
 
         #region Constructors

@@ -1,17 +1,9 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public enum GenerationsEnumModel
+    public enum PrimaryGenerationsEnumModel
     {
-        Original,
-        Original_Intermediate,
-        Base,
-        Health,
-        Stamina,
-        Oxygen,
-        Food,
-        Water,
-        Weight,
-        Melee,
-        MovementSpeed
+        WildCaught = 1,
+        Intermediate = 2,
+        Base = 3
     }
 }
