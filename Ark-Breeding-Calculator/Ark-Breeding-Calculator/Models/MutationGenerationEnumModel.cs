@@ -2,6 +2,7 @@
 {
     public enum MutationGenerationEnumModel
     {
+        Mut0 = 0,
         Mut1 = 1,
         Mut2 = 2,
         Mut3 = 3,
@@ -12,6 +13,5 @@
         Mut8 = 8,
         Mut9 = 9,
         Mut10 = 10
-
     }
 }
