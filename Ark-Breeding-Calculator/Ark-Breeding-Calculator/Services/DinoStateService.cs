@@ -101,7 +101,8 @@ namespace Ark_Breeding_Calculator.Services
                         Weight = 15000,
                         Melee = 16000,
                         MovementSpeed = 17000,
-                        Gender = Gender.Male },
+                        Gender = Gender.Male,
+                        Mutated = false },
                     new DinosaurModel { 
                         Species = Species.Rex, 
                         Health = 10000,
@@ -112,7 +113,8 @@ namespace Ark_Breeding_Calculator.Services
                         Weight = 15000,
                         Melee = 16000,
                         MovementSpeed = 17000, 
-                        Gender = Gender.Female }
+                        Gender = Gender.Female,
+                        Mutated = false}
                 }
             };
 
@@ -132,7 +134,8 @@ namespace Ark_Breeding_Calculator.Services
                         Weight = 15000, 
                         Melee = 16000, 
                         MovementSpeed = 17000,
-                        Gender = Gender.Male },
+                        Gender = Gender.Male,
+                        Mutated = false },
                     new DinosaurModel { 
                         Species = Species.Shadowmane,
                         Health = 10000,
@@ -143,7 +146,8 @@ namespace Ark_Breeding_Calculator.Services
                         Weight = 15000,
                         Melee = 16000,
                         MovementSpeed = 17000,
-                        Gender = Gender.Female }
+                        Gender = Gender.Female,
+                        Mutated = false }
                 }
             };
 

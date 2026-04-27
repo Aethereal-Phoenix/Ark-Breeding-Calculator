@@ -7,6 +7,8 @@
         private Species _species;
         private string _name;
         private Gender _gender;
+        private string _generation;
+        private bool _mutated;
 
         // Stats
         private double _health;
@@ -17,16 +19,15 @@
         private double _weight;
         private double _melee;
         private double _movementSpeed;
-
-        // The generation of the Dinosaur
-        private PrimaryGenerationsEnumModel _generation;
         #endregion
 
         #region Public Properties
         // General information
         public Species Species { get { return _species; } set { _species = value; } }
-        public string Name => GenerateName();
+        public string Name { get { return _name; } set => GenerateName(); }
         public Gender Gender { get { return _gender; } set { _gender = value; } }
+        public string Generation {  get { return _generation; } set { _generation = value; } }
+        public bool Mutated { get { return _mutated; } set { _mutated = value; }  }
 
         // Stats
         public double Health { get { return _health; } set { _health = value; } }
@@ -37,9 +38,6 @@
         public double Weight { get { return _weight; } set { _weight = value; } }
         public double Melee { get { return _melee; } set { _melee = value; } }
         public double MovementSpeed { get { return _movementSpeed; } set { _movementSpeed = value; } }
-
-        // Generation of the Dinosaur
-        public PrimaryGenerationsEnumModel Generation { get { return _generation; } set { _generation = value; } }
         #endregion
 
         #region Constructors
@@ -50,6 +48,10 @@
         #endregion
 
         #region Methods
+        public string GenerationName()
+        {
+            return "";
+        }
         public string GenerateName()
         {
             return $"{Generation} {Gender}";
