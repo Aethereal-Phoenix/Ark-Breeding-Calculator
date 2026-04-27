@@ -47,33 +47,41 @@
             <option value="true">True</option>
             <option valu="false">False</option>
         </select>
+
+        <p>Generation</p>
+        <select @bind="dinosaur.Generation">
+            @foreach (var generation in Enum.GetValues<MutationGeneration>())
+            {
+                <option value="@generation">@generation</option>
+            }
+        </select>
     </div>
 
     <!-- MIDDLE COLUMN -->
     <div class="column">
         <p>Health</p>
-        <input type="number" @bind="dinosaur.Health" />
+        <input type="number" @bind="dinosaur.Stats.Health" />
 
         <p>Stamina</p>
-        <input type="number" @bind="dinosaur.Stamina" />
+        <input type="number" @bind="dinosaur.Stats.Stamina" />
 
         <p>Oxygen</p>
-        <input type="number" @bind="dinosaur.Oxygen" />
+        <input type="number" @bind="dinosaur.Stats.Oxygen" />
 
         <p>Food</p>
-        <input type="number" @bind="dinosaur.Food" />
+        <input type="number" @bind="dinosaur.Stats.Food" />
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="column">
         <p>Water</p>
-        <input type="number" @bind="dinosaur.Water" />
+        <input type="number" @bind="dinosaur.Stats.Water" />
 
         <p>Carry Weight</p>
-        <input type="number" @bind="dinosaur.Weight" />
+        <input type="number" @bind="dinosaur.Stats.Weight" />
 
         <p>Melee</p>
-        <input type="number" @bind="dinosaur.Melee" />
+        <input type="number" @bind="dinosaur.Stats.Melee" />
         
         <br/>
         <button @onclick="AddNewDino">Add</button>      

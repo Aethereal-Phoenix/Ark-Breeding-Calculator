@@ -1,6 +1,6 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public class DinosaurStatsModel
+    public class StatsModel
     {
         // Stats
         private double _health;

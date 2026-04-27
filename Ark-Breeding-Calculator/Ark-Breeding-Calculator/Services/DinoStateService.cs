@@ -91,28 +91,30 @@ namespace Ark_Breeding_Calculator.Services
                 Species = Species.Rex,
                 Dinosaurs = new List<DinosaurModel>
                 {
-                    new DinosaurModel { 
+                    new DinosaurModel {
                         Species = Species.Rex,
-                        Health = 10000,
-                        Stamina = 11000,
-                        Oxygen = 12000,
-                        Food = 13000,
-                        Water = 14000,
-                        Weight = 15000,
-                        Melee = 16000,
-                        MovementSpeed = 17000,
+                        Stats = {
+                            Health = 10000,
+                            Stamina = 11000,
+                            Oxygen = 12000,
+                            Food = 13000,
+                            Water = 14000,
+                            Weight = 15000,
+                            Melee = 16000 ,
+                            MovementSpeed = 17000 },
                         Gender = Gender.Male,
                         Mutated = false },
                     new DinosaurModel { 
-                        Species = Species.Rex, 
-                        Health = 10000,
-                        Stamina = 11000,
-                        Oxygen = 12000,
-                        Food = 13000,
-                        Water = 14000,
-                        Weight = 15000,
-                        Melee = 16000,
-                        MovementSpeed = 17000, 
+                        Species = Species.Rex,
+                        Stats = {
+                            Health = 10000,
+                            Stamina = 11000,
+                            Oxygen = 12000,
+                            Food = 13000,
+                            Water = 14000,
+                            Weight = 15000,
+                            Melee = 16000 ,
+                            MovementSpeed = 17000 }, 
                         Gender = Gender.Female,
                         Mutated = false}
                 }
@@ -124,28 +126,31 @@ namespace Ark_Breeding_Calculator.Services
                 Species = Species.Shadowmane,
                 Dinosaurs = new List<DinosaurModel>
                 {
-                    new DinosaurModel { 
+                    new DinosaurModel {
                         Species = Species.Shadowmane,
-                        Health = 10000, 
-                        Stamina = 11000, 
-                        Oxygen = 12000, 
-                        Food = 13000, 
-                        Water = 14000, 
-                        Weight = 15000, 
-                        Melee = 16000, 
-                        MovementSpeed = 17000,
+                        Generation = 0,
+                        Stats = {
+                            Health = 10000,
+                            Stamina = 11000,
+                            Oxygen = 12000,
+                            Food = 13000,
+                            Water = 14000,
+                            Weight = 15000,
+                            Melee = 16000 ,
+                            MovementSpeed = 17000 },
                         Gender = Gender.Male,
                         Mutated = false },
-                    new DinosaurModel { 
+                    new DinosaurModel {
                         Species = Species.Shadowmane,
-                        Health = 10000,
-                        Stamina = 11000,
-                        Oxygen = 12000,
-                        Food = 13000,
-                        Water = 14000,
-                        Weight = 15000,
-                        Melee = 16000,
-                        MovementSpeed = 17000,
+                        Stats = {
+                            Health = 10000,
+                            Stamina = 11000,
+                            Oxygen = 12000,
+                            Food = 13000,
+                            Water = 14000,
+                            Weight = 15000,
+                            Melee = 16000 ,
+                            MovementSpeed = 17000 },
                         Gender = Gender.Female,
                         Mutated = false }
                 }
