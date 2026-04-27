@@ -9,16 +9,7 @@
         private Gender _gender;
         private string _generation;
         private bool _mutated;
-
-        // Stats
-        private double _health;
-        private double _stamina;
-        private double _oxygen;
-        private double _food;
-        private double _water;
-        private double _weight;
-        private double _melee;
-        private double _movementSpeed;
+        private DinosaurStatsModel _stats;
         #endregion
 
         #region Public Properties
@@ -28,16 +19,7 @@
         public Gender Gender { get { return _gender; } set { _gender = value; } }
         public string Generation {  get { return _generation; } set { _generation = value; } }
         public bool Mutated { get { return _mutated; } set { _mutated = value; }  }
-
-        // Stats
-        public double Health { get { return _health; } set { _health = value; } }
-        public double Stamina { get { return _stamina; } set { _stamina = value; } }
-        public double Oxygen { get { return _oxygen; } set { _oxygen = value; } }
-        public double Food { get { return _food; } set { _food = value; } }
-        public double Water { get { return _water; } set { _water = value; } }
-        public double Weight { get { return _weight; } set { _weight = value; } }
-        public double Melee { get { return _melee; } set { _melee = value; } }
-        public double MovementSpeed { get { return _movementSpeed; } set { _movementSpeed = value; } }
+        public DinosaurStatsModel Stats { get { return _stats} set { _stats = value; }  }
         #endregion
 
         #region Constructors
