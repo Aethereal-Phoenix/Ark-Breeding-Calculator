@@ -41,6 +41,12 @@
                 <option value="@gender">@gender</option>
             }
         </select>
+
+        <p>Mutated</p>
+        <select @bind="dinosaur.Mutated">
+            <option value="true">True</option>
+            <option valu="false">False</option>
+        </select>
     </div>
 
     <!-- MIDDLE COLUMN -->
@@ -68,13 +74,12 @@
 
         <p>Melee</p>
         <input type="number" @bind="dinosaur.Melee" />
-
-        <br />
-        <button @onclick="AddNewDino">Add</button>
+        
+        <br/>
+        <button @onclick="AddNewDino">Add</button>      
     </div>
-
+    
 </div>
-
 <!--Message that pops up when the user hits the button and the dinosaur is created succefully-->
 @if (showSuccessMessage)
 {
