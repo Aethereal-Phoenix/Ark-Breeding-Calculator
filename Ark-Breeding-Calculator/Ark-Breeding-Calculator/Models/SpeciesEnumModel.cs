@@ -1,6 +1,6 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public enum Species
+    public enum SpeciesEnumModel
     {
         Achatina = 0,
         Allosaurus = 1,

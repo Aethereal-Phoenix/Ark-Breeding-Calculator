@@ -1,8 +1,8 @@
 ﻿<!-- Displays a single Dinosaur's stats in a styled card -->
 <!--The color will change based on gender-->
-<div class="card p-2 m-2 @(Dinosaur.Gender == Gender.Male
+<div class="card p-2 m-2 @(Dinosaur.Gender == GenderEnumModel.Male
              ? "dino-male"
-             : (Dinosaur.Gender == Gender.Female
+             : (Dinosaur.Gender == GenderEnumModel.Female
                  ? "dino-female"
                  : "dino-unknown"))">
 

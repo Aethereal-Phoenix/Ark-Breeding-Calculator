@@ -1,6 +1,6 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public enum MutationGeneration
+    public enum MutationGenerationEnumModel
     {
         Mut0 = 0,
         Mut1 = 1,

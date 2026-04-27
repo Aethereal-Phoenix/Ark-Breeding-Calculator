@@ -14,7 +14,7 @@
 
     <!--Group all breeding lines by Species, then sort those species groups alphabetically.-->
     <!--Each 'group' represents one Species (group.Key) and contains all BreedingLineModels for that species.-->
-    @foreach (IGrouping<Species, BreedingLineModel> group in DinoService.BreedingLines
+    @foreach (IGrouping<SpeciesEnumModel, BreedingLineModel> group in DinoService.BreedingLines
             .GroupBy(species => species.Species)
             .OrderBy(group => group.Key))
     {

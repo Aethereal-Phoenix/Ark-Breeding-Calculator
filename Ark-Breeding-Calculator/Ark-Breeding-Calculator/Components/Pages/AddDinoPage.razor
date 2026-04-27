@@ -12,7 +12,7 @@
     <div class="column">
         <p>Breeding Line</p>
         <select @bind="selectedLineId">
-            @foreach (IGrouping<Species, BreedingLineModel> group in DinoService.BreedingLines
+            @foreach (IGrouping<SpeciesEnumModel, BreedingLineModel> group in DinoService.BreedingLines
                     .GroupBy(species => species.Species)
                     .OrderBy(group => group.Key))
             {
@@ -28,7 +28,7 @@
 
         <p>Species</p>
         <select @bind="dinosaur.Species">
-            @foreach (var species in Enum.GetValues<Species>())
+            @foreach (var species in Enum.GetValues<SpeciesEnumModel>())
             {
                 <option value="@species">@species</option>
             }
@@ -36,7 +36,7 @@
 
         <p>Gender</p>
         <select @bind="dinosaur.Gender">
-            @foreach (var gender in Enum.GetValues<Gender>())
+            @foreach (var gender in Enum.GetValues<GenderEnumModel>())
             {
                 <option value="@gender">@gender</option>
             }
@@ -49,8 +49,8 @@
         </select>
 
         <p>Generation</p>
-        <select @bind="dinosaur.Generation">
-            @foreach (var generation in Enum.GetValues<MutationGeneration>())
+        <select @bind="dinosaur.GenerationNumber">
+            @foreach (var generation in Enum.GetValues<MutationGenerationEnumModel>())
             {
                 <option value="@generation">@generation</option>
             }

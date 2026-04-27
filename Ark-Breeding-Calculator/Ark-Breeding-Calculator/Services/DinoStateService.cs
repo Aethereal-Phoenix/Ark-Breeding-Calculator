@@ -75,7 +75,7 @@ namespace Ark_Breeding_Calculator.Services
             NotifyStateChanged();
         }
 
-        public IEnumerable<DinosaurModel> GetBySpecies(Species species)
+        public IEnumerable<DinosaurModel> GetBySpecies(SpeciesEnumModel species)
         {
             return _breedingLines
                 .Where(l => l.Species == species)
@@ -88,12 +88,32 @@ namespace Ark_Breeding_Calculator.Services
             BreedingLineModel rexLine = new BreedingLineModel
             {
                 Name = "Rex Line",
-                Species = Species.Rex,
+                Species = SpeciesEnumModel.Rex,
                 Dinosaurs = new List<DinosaurModel>
                 {
                     new DinosaurModel {
-                        Species = Species.Rex,
-                        Stats = {
+                        Species = SpeciesEnumModel.Rex,
+                        Gender = GenderEnumModel.Male,
+                        MutatedStat = MutationStatsEnumModel.None,
+                        GenerationNumber = 0,
+                        GenerationType = PrimaryGenerationsEnumModel.WildCaught,
+                        Stats = new StatsModel{
+                            Health = 10000,
+                            Stamina = 11000,
+                            Oxygen = 12000,
+                            Food = 13000,
+                            Water = 14000,
+                            Weight = 15000,
+                            Melee = 16000 ,
+                            MovementSpeed = 17000 }
+                    },
+                    new DinosaurModel {
+                        Species = SpeciesEnumModel.Rex,
+                        Gender = GenderEnumModel.Female,
+                        MutatedStat = MutationStatsEnumModel.None,
+                        GenerationNumber = 0,
+                        GenerationType = PrimaryGenerationsEnumModel.WildCaught,
+                        Stats = new StatsModel{
                             Health = 10000,
                             Stamina = 11000,
                             Oxygen = 12000,
@@ -102,34 +122,23 @@ namespace Ark_Breeding_Calculator.Services
                             Weight = 15000,
                             Melee = 16000 ,
                             MovementSpeed = 17000 },
-                        Gender = Gender.Male,
-                        Mutated = false },
-                    new DinosaurModel { 
-                        Species = Species.Rex,
-                        Stats = {
-                            Health = 10000,
-                            Stamina = 11000,
-                            Oxygen = 12000,
-                            Food = 13000,
-                            Water = 14000,
-                            Weight = 15000,
-                            Melee = 16000 ,
-                            MovementSpeed = 17000 }, 
-                        Gender = Gender.Female,
-                        Mutated = false}
+                    }
                 }
             };
 
             BreedingLineModel shadowmaneLine = new BreedingLineModel
             {
                 Name = "Shadowmane Line",
-                Species = Species.Shadowmane,
+                Species = SpeciesEnumModel.Shadowmane,
                 Dinosaurs = new List<DinosaurModel>
                 {
                     new DinosaurModel {
-                        Species = Species.Shadowmane,
-                        Generation = 0,
-                        Stats = {
+                        Species = SpeciesEnumModel.Shadowmane,
+                        Gender = GenderEnumModel.Male,
+                        MutatedStat = MutationStatsEnumModel.None,
+                        GenerationNumber = 0,
+                        GenerationType = PrimaryGenerationsEnumModel.WildCaught,
+                        Stats = new StatsModel{
                             Health = 10000,
                             Stamina = 11000,
                             Oxygen = 12000,
@@ -138,11 +147,14 @@ namespace Ark_Breeding_Calculator.Services
                             Weight = 15000,
                             Melee = 16000 ,
                             MovementSpeed = 17000 },
-                        Gender = Gender.Male,
-                        Mutated = false },
+                    },
                     new DinosaurModel {
-                        Species = Species.Shadowmane,
-                        Stats = {
+                        Species = SpeciesEnumModel.Shadowmane,
+                        Gender = GenderEnumModel.Female,
+                        MutatedStat = MutationStatsEnumModel.None,
+                        GenerationNumber = 0,
+                        GenerationType = PrimaryGenerationsEnumModel.WildCaught,
+                        Stats = new StatsModel{
                             Health = 10000,
                             Stamina = 11000,
                             Oxygen = 12000,
@@ -151,8 +163,7 @@ namespace Ark_Breeding_Calculator.Services
                             Weight = 15000,
                             Melee = 16000 ,
                             MovementSpeed = 17000 },
-                        Gender = Gender.Female,
-                        Mutated = false }
+                    }
                 }
             };
 

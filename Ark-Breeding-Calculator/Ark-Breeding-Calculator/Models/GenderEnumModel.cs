@@ -1,6 +1,6 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public enum Gender
+    public enum GenderEnumModel
     {
         Unknown = 0,
         Male = 1,

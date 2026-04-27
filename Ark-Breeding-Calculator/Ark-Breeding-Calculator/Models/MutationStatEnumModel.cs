@@ -1,6 +1,6 @@
 ﻿namespace Ark_Breeding_Calculator.Models
 {
-    public enum MutationStats
+    public enum MutationStatsEnumModel
     {
         None = 0,
         Health = 1,
